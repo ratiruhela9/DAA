@@ -1,0 +1,41 @@
+nt binarysearch(int a[],int l,int n,int key)
+{
+    if(l>h)
+    {
+        return -1;
+    }
+    int mid=(l+h)/2;
+    if(a[mid]==key)
+    {
+        return mid;
+    }
+    else if(key>a[mid])
+    return binarysearch(a,mid+1,h,key);
+    else
+    return binarysearch(a,l,mid-1,key);
+}
+
+
+
+
+
+
+int main()
+{
+    int n,c,i=0,val;
+    int a[20];
+    
+    int l=i;
+    printf("enter the number of elements of an array");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    printf("enter key");
+    scanf("%d",&val);
+    
+     c=binarysearch(a,l,n,val);
+     return c;
+    ;
+}
