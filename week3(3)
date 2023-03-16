@@ -27,12 +27,11 @@ void quickSort(int array[], int low, int high)
 {
   if (low < high) 
   {    
-    // Select pivot position and put all the elements smaller 
-    // than pivot on left and greater than pivot on right
+    
     int pi = partition(array, low, high);    
-    // Sort the elements on the left of pivot
+   
     quickSort(array, low, pi - 1);    
-    // Sort the elements on the right of pivot
+   
     quickSort(array, pi + 1, high);
   }
 }
@@ -48,7 +47,7 @@ void printArray(int array[], int size)
 int main() 
 {
   int arr[] = {3 , 5 ,7 ,3 ,4,2 ,2, 8};
-  int n = sizeof(arr) / sizeof(arr[0]);
+  int n = sizeof(arr);
   quickSort(arr, 0, n - 1);
   printf("Sorted array in ascending order: \n");
   printArray(arr, n);
