@@ -1,48 +1,22 @@
-#include <stdio.h>
+#include<stdio.h>
 #define n 10
-int binarSearch(int a[], int num, int key)
-{
-    int l = 0, mid;
-    int r = num - 1, count = 0;
-    while (l <= r)
-    {
-        count++;
-        mid = (l + r) / 2;
-        // printf("%d",l);
-        if (key == a[mid])
-        {
-            printf("%d  ", count);
-            return mid;
-        }
-        else if (key < a[mid])
-            r = mid - 1;
-        else
-            l = mid + 1;
-    }
-    return -1;
-}
 int main()
 {
-    int a[n], key;
+    int a[n];
     printf("enter array elements\n");
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &a[i]);
     }
-    printf("Enter the value of data to be searched");
-    scanf("%d", &key);
-    int value = binarSearch(a, n, key);
-    if (value == -1)
-        printf("Not present");
-    else
+    for(int i=0;i<n;i++)
     {
-        printf("Present\n");
-        int dup = 0;
-        for (int i = value; i < n; i++)
+        for(int j=i+1;j<n;j++)
         {
-            if (a[i] == key)
-                dup++;
+            for(int k=j+1;k<n;k++)
+            {
+                if(a[i]+a[j]==a[k])
+                    printf("%d %d %d \n",i+1,j+1,k+1);
+            }
         }
-        printf("Total no. of duplicate keys's are %d", dup);
     }
 }
