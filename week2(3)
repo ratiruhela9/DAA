@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define n 10
+int main()
+{
+    int a[n], key,count=0;
+    printf("enter array elements\n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+    printf("Enter the key");
+    scanf("%d", &key);
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            if(abs(a[i]-a[j])==key)
+                count++;
+        }
+    }
+    printf("%d",count);
+}
